@@ -105,11 +105,14 @@
             display: none;
         }
         .custom-header {
-            flex-wrap: wrap;
-            justify-content: center;
+            display: flex;
+            flex-direction: row;
         }
         .user-icons {
-            margin-top: 10px;
+            display: flex;
+        }
+        .logo {
+            display: flex;
         }
     }
     /* ____________________________________________________________________________________ */

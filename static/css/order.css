@@ -88,14 +88,17 @@ body{
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
-        display: none;
+        display: none !important;
     }
     .custom-header {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
     }
     .user-icons {
-        margin-top: 10px;
+        display: flex;
+    }
+    .logo {
+        display: flex;
     }
 }
 
@@ -201,6 +204,7 @@ body{
 }
 
 @media screen and (max-width:1024px) {
+    
     .container-div{
         flex-direction: column;
         padding:1.5rem 0 !important;

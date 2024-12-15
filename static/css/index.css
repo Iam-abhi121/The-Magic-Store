@@ -105,11 +105,14 @@ body {
         display: none;
     }
     .custom-header {
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex;
+        flex-direction: row;
     }
     .user-icons {
-        margin-top: 10px;
+        display: flex;
+    }
+    .logo {
+        display: flex;
     }
 }
 /* ____________________________________________________________________________________ */
@@ -573,6 +576,7 @@ footer {
     .product-card {
         width: calc(50% - 20px); /* Adjust the width as needed */
     }
+
 }
 
 @media screen and (max-width: 500px) {
