@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - The Magic Store</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/profile.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/fevicon.png')}}" type="image/x-icon">
+
+</head>
+<body>
+    <!-- Header Section -->
+
+
+    <header class="custom-header">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static',filename='img/The_Magic_Store_Logo.png')}}" class = logo-img alt="Logo" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="books">BOOKS</a></li>
+                <li><a href="electronics">ELECTRONICS</a></li>
+                <li><a href="fashion">FASHION</a></li>
+            </ul>
+        </nav>
+        <div class="user-icons">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            {% if semail%}
+                <a href="manageproduct"><i class="fa-solid fa-store"></i></a>
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+            {% elif email %}
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% else %}
+                <a href="sellerregister"> Become a Seller </a>
+                <a href="register"><i class="fa-solid fa-user"></i></a>
+                <a href="/register"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% endif %}
+        </div>
+    </header>
+    
+
+
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="{{ url_for('static', filename='img/1.png') }}" alt="User Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1>{{ name }}</h1>
+                <p class="bio">Avid shopper at The Magic Store. Love discovering unique items and great deals!</p>
+            </div>
+        </div>
+
+        <!-- Profile Details -->
+        <div class="profile-details">
+            <h2>Profile Details</h2>
+            <ul class="details-list">
+                <li><strong>Email:</strong> {{ email }}</li>
+            {% if user and user.address %}
+                <li><strong>Location: </strong>{{ user.address.house }}, {{ user.address.landmark }}, {{ user.address.street }}, {{user.address.city}} - {{ user.address.pincode }}</li>
+                <li><strong>Mobile: </strong> {{ user.phone }}</li>
+            
+            {% elif seller and seller.address %}
+            <li><strong>Location: </strong>{{ seller.address.house }}, {{ seller.address.landmark }}, {{ seller.address.street }}, {{seller.address.city}} - {{ seller.address.pincode }}</li>
+            <li><strong>Mobile: </strong> {{ seller.phone }}</li>
+            {% endif %} 
+            </ul>
+            
+            <div class="profile-actions">
+                <a href="/edit-profile" class="edit-button">Edit Profile</a>
+                <form action="{{ url_for('logout') }}" method="post">
+                    <button type="submit" class="logout-button">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-div">
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/iam_abhii___/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/abhijeethursad/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
+        <p>&copy; 2024 The Magic Store. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

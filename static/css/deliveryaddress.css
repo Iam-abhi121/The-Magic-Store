@@ -1,0 +1,246 @@
+/* Basic CSS for the Checkout Page */
+body {
+    font-family: merlo, georgia, serif !important;
+    margin: 0;
+    padding: 0;
+    background-color: #f7feff;
+}
+
+
+
+
+
+
+/* Header Styling */
+.custom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.custom-header {
+    max-height: 72px;
+}
+
+.logo-img {
+    mix-blend-mode: darken;
+    /* object-fit: cover; */
+    height:60px ;
+    width: 100px;
+}
+
+.navbar {
+    flex-grow: 1;
+    margin-left: 20px;
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    padding: 5px 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5959;
+}
+
+.nav-links .new {
+    font-size: 10px;
+    color: #ff5959;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* User Icons Styling */
+.user-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-icons a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.user-icons a:hover {
+    color: #ff5959;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .custom-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .user-icons {
+        margin-top: 10px;
+    }
+}
+
+
+.checkout-header nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.checkout-header nav a {
+    margin: 0 1rem;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.delivery-address, .billing-details {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.delivery-address h2, .billing-details h2 {
+    margin-top: 0;
+}
+
+.edit-btn, .remove-btn, .payment-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn:hover, .remove-btn:hover, .payment-btn:hover {
+    background-color: #0056b3;
+}
+
+
+.invoice {
+    width: 80%;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+.invoice-header, .invoice-footer {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+.invoice-table th {
+    background-color: #f4f4f4;
+}
+.invoice-total {
+    font-size: 1.5em;
+    text-align: right;
+    margin-top: 20px;
+}
+.notes {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+
+
+
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background-color: #ededed;
+    color: rgb(0, 0, 0); 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    
+}
+.footer-div {
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    color: rgb(0, 0, 0); 
+
+}
+.footer-div a {
+    color: #000;
+}
+
+.footer-div a:hover{
+    color: #ff0000;
+
+}

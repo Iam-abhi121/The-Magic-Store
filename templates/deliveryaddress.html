@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/deliveryaddress.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/fevicon.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+</head>
+    <!-- Header Section -->
+
+
+    <header class="custom-header">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static',filename='img/The_Magic_Store_Logo.png')}}" class = logo-img alt="Logo" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="books">BOOKS</a></li>
+                <li><a href="electronics">ELECTRONICS</a></li>
+                <li><a href="fashion">FASHION</a></li>
+            </ul>
+        </nav>
+        <div class="user-icons">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            {% if semail%}
+                <a href="manageproduct"><i class="fa-solid fa-store"></i></a>
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+            {% elif email %}
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% else %}
+                <a href="sellerregister"> Become a Seller </a>
+                <a href="register"><i class="fa-solid fa-user"></i></a>
+                <a href="/register"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% endif %}
+        </div>
+    </header>
+
+
+
+
+
+<body>
+    <div class="checkout-page">
+        <header class="checkout-header">
+            <nav>
+                <a href="cart">MY BAG</a>
+                <span>-----------</span>
+                <a href="deliveryaddress">ADDRESS</a>
+                <span>-----------</span>
+                <a href="#">PAYMENT</a>
+            </nav>
+        </header>
+        <div class="checkout-container">
+            <!-- Delivery Address Section -->        
+            {% if user.address %}
+            <div class="delivery-address">
+                <h2>Delivery Address</h2>
+                <p>{{ user.name }}</p>
+                <p>{{ user.address.house }}</p>
+                <p>{{ user.address.landmark }}</p>
+                <p>{{ user.address.street }}</p>
+                <p>{{user.address.city}} - {{ user.address.pincode }}</p>
+                <p>Mobile: {{ user.phone }}</p>
+                <button class="edit-btn">Edit</button>
+                <button class="remove-btn">Remove</button>
+            </div>
+        {% endif %}
+
+<!-- ---------------- New Address Input ------------------- -->
+        <div class="checkout-container">
+            <a href="addnewaddress"><button type="submit" class="btn btn-outline-danger">Add New Address</button></a>
+        </div>
+
+            
+            
+            <!-- Billing Details Section -->
+
+            <div class="invoice">
+                <div class="invoice-header">
+                    <p>INVOICE</p>
+                </div>
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>ITEMS</th>
+                            <th>DESCRIPTION</th>
+                            <th>QUANTITY</th>
+                            <th>PRICE</th>
+                            <!-- <th>TAX</th>
+                            <th>AMOUNT</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                        <tr>  
+                            <td>{{ product.product_name }}</td>
+                            <td>{{ product.description }}</td>
+                            <td>{{ product.quantity }}</td>
+                            <td>₹ {{ product.price }}</td>
+                            <!-- <td>0%</td>
+                            <td>$0000.00</td>     -->
+                        </tr>
+                        {% endfor %}
+                        <!-- Repeat rows as needed -->
+                    </tbody>
+                </table>
+                <div class="notes">
+                    <p>Certified that the Particulars given above are true and correct
+                        Terms & Conditions/ Remarks (If any)
+                        This is a computer generated invoice</p>
+                </div>
+                <div class="invoice-total">
+                    <p>TOTAL: ₹{{ total }}</p>
+                </div>
+            </div>
+
+            <!-- Continue to Payment Button -->
+            <button class="payment-btn">CONTINUE TO PAYMENT</button>
+        </div>
+        
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-div">
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/iam_abhii___/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/abhijeethursad/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
+        <p>&copy; 2024 The Magic Store. All Rights Reserved.</p>
+    </footer>
+    </div>
+</body>
+</html>

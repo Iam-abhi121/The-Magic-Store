@@ -1,0 +1,244 @@
+body{
+    font-family: merlo, georgia, serif !important;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+/* Header Styling */
+.custom-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.custom-header {
+    max-height: 72px;
+}
+
+.logo-img {
+    mix-blend-mode: darken;
+    /* object-fit: cover; */
+    height:60px ;
+    width: 100px;
+}
+
+.navbar {
+    flex-grow: 1;
+    margin-left: 20px;
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    padding: 5px 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff5959;
+}
+
+.nav-links .new {
+    font-size: 10px;
+    color: #ff5959;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* User Icons Styling */
+.user-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-icons a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.user-icons a:hover {
+    color: #ff5959;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .custom-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .user-icons {
+        margin-top: 10px;
+    }
+}
+
+.container-div{
+    height: fit-content;
+    margin: 0;
+    padding: 0 5rem;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.upper-div{
+    width: 55%;
+    height: 90vh;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.image-div{
+    width: 49%;
+}
+.image{
+    width: 100% !important;
+    height: 100%;
+}
+
+.lower-div{
+    width: 35%;
+    height: 90vh;
+}
+.title{
+    font-weight: 700 !important;
+    color: #58595b !important;
+}
+
+.size-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.size {
+    text-align: center;
+    border: 2px solid gray;
+    width: 3.85rem;
+    padding: 10px;
+    cursor: pointer;
+    display: inline-block;
+    transition: border-color 0.3s;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.size.selected {
+    border-color: rgb(25, 207, 207);
+    border-width: 3px;
+}
+
+.size span {
+    pointer-events: none;
+}
+.text{
+    margin: 5px 0 !important;
+    color: #58595b !important;
+}
+
+.quantity-div{
+    justify-content: start;
+    align-items: center;
+}
+.form-select{
+    width: fit-content !important;
+}
+
+
+.delivery-input-div{
+    border:1px solid gray;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: center !important;
+    padding: 5px 10px !important;
+}
+.delivery-input{
+    border: 0;
+    width: 80%;
+}
+.delivery-input:focus{
+    outline: none;
+}
+.delivery-input::-webkit-outer-spin-button,
+.delivery-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.delivery-input-text{
+    color:rgb(17, 122, 122) !important;
+    font-weight: 650 !important;
+}
+
+@media screen and (max-width:1024px) {
+    .container-div{
+        flex-direction: column;
+        padding:1.5rem 0 !important;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden !important;
+    }
+    .upper-div {
+        width: 100%;
+        height: 50vh;
+        flex-direction: row !important;
+        justify-content:space-evenly  !important;
+        flex-wrap: nowrap;
+        transition: transform 0.5s ease-in-out;
+        gap: 0 !important;
+    }
+
+    .image-div {
+        height: 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .image {
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .lower-div{
+        width: 90%;
+    }
+}
+@media screen and (min-width:1200px) {
+    .container-div{
+        padding: initial 5rem ;
+    }
+    .image-div{
+        width: 49%;
+    }
+}
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/electronics.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/fevicon.png')}}" type="image/x-icon">
+
+    <title>Electronics - The Magic Store</title>
+</head>
+<body>
+
+</head>
+<body>
+
+    <header class="custom-header">
+        <div class="logo">
+            <a href="/">
+                <img src="{{ url_for('static',filename='img/The_Magic_Store_Logo.png')}}" class = logo-img alt="Logo" />
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="books">BOOKS</a></li>
+                <li><a href="electronics">ELECTRONICS</a></li>
+                <li><a href="fashion">FASHION</a></li>
+            </ul>
+        </nav>
+        <div class="user-icons">
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            {% if semail%}
+                <a href="manageproduct"><i class="fa-solid fa-store"></i></a>
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+            {% elif email %}
+                <a href="profile"><i class="fa-solid fa-user"></i></a>
+                <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% else %}
+                <a href="sellerregister"> Become a Seller </a>
+                <a href="register"><i class="fa-solid fa-user"></i></a>
+                <a href="/register"><i class="fa-solid fa-cart-shopping"></i></a>
+            {% endif %}
+        </div>
+    </header>
+
+
+    <!-- Books Banner Section -->
+    <section class="banner">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <img src="{{ url_for('static',filename='img/electronicsban.png')}}" alt="Banner 1">
+            </div>
+            <div class="banner-slide">
+                <img src="{{ url_for('static',filename='img/electronicsban2.png')}}" alt="Banner 2">
+            </div>
+            <div class="banner-slide">
+                <img src="{{ url_for('static',filename='img/electronicsban3.png')}}" alt="Banner 3">
+            </div>
+            <div class="banner-slide">
+                <img src="{{ url_for('static',filename='img/electronicsban4.png')}}" alt="Banner 3">
+            </div>
+            <div class="banner-slide">
+                <img src="{{ url_for('static',filename='img/electronicsban5.png')}}" alt="Banner 3">
+            </div>
+
+        </div>
+        <div class="banner-controls">
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+        </div>
+        <div class="banner-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+            <span class="indicator" data-slide="4"></span>
+        </div>
+    </section>
+    
+     <!-- electronic Section -->
+    <section class="electronic">
+        <br>
+        <br>
+        <h2>Explore a Wide Range of Electronics</h2>
+        <br>
+        <div class="electronic-grid">
+            {% for product in products %}
+            <div class="electronic-card">
+                <a href="order/{{ product._id }}">
+                    <div class="image">
+                        <img class="image-img" src="{{ product.images[0] }}" alt="">
+                     </div>
+                    <h3>{{ product.product_name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <p>₹{{ product.price }}</p>
+                    <br>
+                </a>
+                <!-- <img src="https://via.placeholder.com/150" alt="Product 1"> -->
+                 
+                <!-- <button>Add to Cart</button> -->
+            </div>
+            {% endfor %}
+        </div>
+        
+    </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" 
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer">
+    </script>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-div">
+            <a href=""><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/iam_abhii___/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/abhijeethursad/"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        
+        <p>&copy; 2024 The Magic Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static',filename='js/index.js')}}"></script>
+</body>
+</html>

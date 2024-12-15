@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='img/fevicon.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script>
+        function removeItem(itemId) {
+            fetch('/remove_item', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: itemId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById('item-' + itemId).remove();
+                } else {
+                    alert('Error removing item.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<!-- Header Section -->
+
+
+<header class="custom-header">
+    <div class="logo">
+        <a href="/">
+            <img src="{{ url_for('static',filename='img/The_Magic_Store_Logo.png')}}" class = logo-img alt="Logo" />
+        </a>
+    </div>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="books">BOOKS</a></li>
+            <li><a href="electronics">ELECTRONICS</a></li>
+            <li><a href="fashion">FASHION</a></li>
+        </ul>
+    </nav>
+    <div class="user-icons">
+        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        {% if semail%}
+            <a href="manageproduct"><i class="fa-solid fa-store"></i></a>
+            <a href="profile"><i class="fa-solid fa-user"></i></a>
+        {% elif email %}
+            <a href="profile"><i class="fa-solid fa-user"></i></a>
+            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        {% else %}
+            <a href="sellerregister"> Become a Seller </a>
+            <a href="register"><i class="fa-solid fa-user"></i></a>
+            <a href="/register"><i class="fa-solid fa-cart-shopping"></i></a>
+        {% endif %}
+    </div>
+</header>
+
+<div class="checkout-page">
+    <header class="checkout-header">
+        <nav>
+            <a href="cart">MY BAG</a>
+            <span>-----------</span>
+            <a href="deliveryaddress">ADDRESS</a>
+            <span>-----------</span>
+            <a href="#">PAYMENT</a>
+        </nav>
+    </header>
+
+    <div class="cart-page">
+        <header>
+        </header>
+        
+        <div class="cart-container">
+            {% for product in products %}
+            <div class="cart-items">
+                <div class="cart-item" id="item-{{ product._id }}">
+                    <img src="{{ product.images[0] }}" alt="Pointelle Knitted Sweater">
+                    
+                    <div class="item-details">
+                        <h3>{{ product.product_name }}</h3>
+                        <p>{{ product.description }}</p>
+                        <div class="item-options">
+                            <div class="dropdown">
+                                {% if product.category == "Fashion"%}
+                                <p>Size : {{ product.size.upper() }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="dropdown">
+                                <p>Qty : {{ product.quantity }}</p>
+                            </div>
+                        </div>
+                        <div class="item-actions">
+                            <button class="remove-btn" onclick="removeItem('{{ product._id }}')">REMOVE</button>
+                            <button class="wishlist-btn">MOVE TO WISHLIST</button>
+                        </div>
+                    </div>
+                    
+                    <div class="item-price">₹ {{ product.price }}</div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="cart-summary">
+            <a href="deliveryaddress"><button type="submit" class="btn btn-outline-success">PLACE ORDER</button>
+            </a>
+
+                <!-- <div class="summary-info">
+                    <p>Save an additional ₹ 89.29 on this order.</p>
+                    <div class="options">
+                        <button>Apply Coupon</button>
+                        <button>Gift Voucher</button>
+                        <label>
+                            <input type="checkbox"> Gift Wrap (₹ 25)
+                        </label>
+                        <button>TSS Money / TSS Points</button>
+                    </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="footer-div">
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/iam_abhii___/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/abhijeethursad/"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            
+            <p>&copy; 2024 The Magic Store. All Rights Reserved.</p>
+        </footer>
+</body>
+</html>

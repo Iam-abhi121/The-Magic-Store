@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Magic Store</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/addnewaddress.css')}}">
+  <link rel="shortcut icon" href="{{ url_for('static',filename='img/fevicon.png')}}" type="image/x-icon">
+
+</head>
+<body>
+  <div class="modal-container">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Address</h2>
+        <a href="deliveryaddress"><button class="close-btn">&times;</button></a>
+      </div>
+
+      <form class="address-form" method="POST" action="/addnewaddress">
+        <input type="text" name="house" placeholder="House No., Building Name*" required>
+        <input type="text" name="street" placeholder="Street Name, Area*" required>
+        <input type="text" name="landmark" placeholder="Landmark">
+        <div class="row">
+          <input type="pincode" name="pincode" placeholder="Postal Code*" required>
+          <input type="text" name="city" placeholder="City/District*" required>
+        </div>
+        <input type="text" name="phone" placeholder="Phone No.*" required>
+
+        <div class="form-buttons">
+          <a href="deliveryaddress"><button type="button" class="cancel-btn">Cancel</button></a>
+          <button type="submit" class="save-btn">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

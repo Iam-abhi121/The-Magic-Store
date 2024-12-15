@@ -1,0 +1,345 @@
+
+
+    /* General Styles */
+    body {
+        font-family: merlo, georgia, serif !important;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #ffffff;
+        
+    }
+    
+    /* header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000000;
+        padding: 10px 20px;
+        color: white;
+    } */
+    /* ------------------------------------------------------ */
+    /* Header Styling */
+    .custom-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .custom-header {
+        max-height: 72px;
+    }
+    
+    .logo-img {
+        mix-blend-mode: darken;
+        /* object-fit: cover; */
+        height:60px ;
+        width: 100px;
+    }
+    
+    .navbar {
+        flex-grow: 1;
+        margin-left: 20px;
+        
+    }
+    
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links li {
+        position: relative;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 600;
+        padding: 5px 10px;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+        color: #ff5959;
+    }
+    
+    .nav-links .new {
+        font-size: 10px;
+        color: #ff5959;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+    
+    /* User Icons Styling */
+    .user-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .user-icons a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+    
+    .user-icons a:hover {
+        color: #ff5959;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar {
+            display: none;
+        }
+        .custom-header {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .user-icons {
+            margin-top: 10px;
+        }
+    }
+
+/* Header Styles
+.cart-header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.cart-header nav span {
+    color: #fff;
+} */
+
+/* Cart Container */
+
+.checkout-header nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.checkout-header nav a {
+    margin: 0 1rem;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Cart Items */
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+    max-width: 1200px;
+}
+
+/* Individual Product Card */
+.cart-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #4CAF50;
+}
+
+.item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.item-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.dropdown select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.remove-btn,
+.wishlist-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover,
+.wishlist-btn:hover {
+    background-color: #ddd;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 50px;
+    color: #ff0000;
+}
+
+/* Cart Summary */
+.cart-summary {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 350px;
+    margin-top: 20px;
+}
+
+.place-order-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.place-order-btn:hover {
+    background-color: #45a049;
+}
+
+.summary-info {
+    font-size: 14px;
+    color: #333;
+}
+
+.summary-info p {
+    margin: 10px 0;
+}
+
+.options button,
+.options input[type="checkbox"] {
+    margin: 5px 0;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.options button:hover {
+    background-color: #ddd;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.options label input {
+    margin-right: 10px;
+}
+
+
+footer {
+    background-color: #ededed;
+    color: rgb(0, 0, 0); 
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 20px;
+    
+}
+.footer-div {
+    display: flex;
+    text-align: center;
+    gap: 20px;
+    color: rgb(0, 0, 0); 
+
+}
+.footer-div a {
+    color: #000;
+}
+
+.footer-div a:hover{
+    color: #ff0000;
+
+}
