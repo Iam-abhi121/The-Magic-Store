@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f7feff;
+    background-color: #f7ffff;
     
 }
 
@@ -114,6 +114,134 @@ body {
     .logo {
         display: flex;
     }
+
+    .product-card {
+        min-width: 150px !important;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: left !important;
+        padding: 10px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        height: 290px !important;
+        display: flex;
+        
+    }
+
+    .product-card .image {
+        width: 150px !important;
+        height: 200px !important;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .product-card h3 {
+        color: #333;
+        margin: 10px 0;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-weight: bold;
+        width: 150px !important; /* Adjust as per your design */
+        overflow: hidden;
+        white-space: nowrap;
+        
+    }
+    
+    .product-card p {
+        color: #666;
+        margin: 10px 0;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        width: 140px !important; /* Adjust as per your design */
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .books-card{
+        min-width: 150px !important;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+        overflow: hidden;
+        text-align: left !important;
+        padding: 10px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        height: 310px !important;
+        display: flex;
+    }
+
+    .books-card .image {
+        width: 150px !important;
+        height: 225px !important;
+        overflow: hidden;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .books-card h3 {
+        color: #333;
+        margin: 10px 0;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-weight: bold;
+        width: 150px !important; /* Adjust as per your design */
+        overflow: hidden;
+        white-space: nowrap;
+        
+    }
+    
+    .books-card p {
+        color: #666;
+        margin: 10px 0;
+        text-overflow: ellipsis;
+        font-size: 14px;
+        width: 140px !important; /* Adjust as per your design */
+        overflow: hidden;
+        white-space: nowrap;
+}
+
+
+.electronic-card{
+    min-width: 150px !important;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    overflow: hidden;
+    text-align: left !important;
+    padding: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    height: 240px !important;
+    display: flex;
+}
+
+.electronic-card .image {
+    width: 150px !important;
+    height: 150px !important;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+.electronic-card h3 {
+    color: #333;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: bold;
+    width: 150px !important; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+
+.electronic-card p {
+    color: #666;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    width: 140px !important; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
+}
 }
 /* ____________________________________________________________________________________ */
 
@@ -335,8 +463,9 @@ nav ul li a {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     padding: 10px;
+    height: 490px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     
 }
@@ -346,6 +475,113 @@ nav ul li a {
     height: 400px;
     overflow: hidden;
     border-bottom: 1px solid #ddd;
+}
+
+
+ /* ----------------------------------- Books -------------------------------------------- */
+
+
+    
+.books-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* border-bottom: 2px solid gray; */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.books-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+
+
+  .books-card {
+    min-width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    height: 590px;
+    padding: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
+}
+
+.books-card .image {
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+.books-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.books-card .image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.books-card:hover .image-img {
+    transform: scale(1.1);
+}
+
+.books-card h3 {
+    color: #333;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
+    
+}
+
+.books-card p {
+    color: #666;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    width: 290px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.books-card p:last-of-type {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.books-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.books-card .tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff5959;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+/* ///////////////////////////////////////////////////////////////// */
 
     
     
@@ -356,7 +592,7 @@ nav ul li a {
 
 
     
-}.electronic-grid {
+.electronic-grid {
     display: flex;
     gap: 20px;
     overflow-x: auto;
@@ -379,9 +615,10 @@ nav ul li a {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     padding: 10px;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    height: 390px;
     
 }
 
@@ -411,17 +648,25 @@ nav ul li a {
 }
 
 .electronic-card h3 {
-    font-size: 18px;
-    font-weight: 600;
     color: #333;
     margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
     
 }
 
 .electronic-card p {
-    font-size: 14px;
     color: #666;
-    margin: 5px 0;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    width: 290px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .electronic-card p:last-of-type {
@@ -493,17 +738,25 @@ nav ul li a {
 }
 
 .product-card h3 {
-    font-size: 18px;
-    font-weight: 600;
     color: #333;
     margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
     
 }
 
 .product-card p {
-    font-size: 14px;
     color: #666;
-    margin: 5px 0;
+    margin: 10px 0;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    width: 290px; /* Adjust as per your design */
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .product-card p:last-of-type {
@@ -576,6 +829,7 @@ footer {
     .product-card {
         width: calc(50% - 20px); /* Adjust the width as needed */
     }
+    
 
 }
 
