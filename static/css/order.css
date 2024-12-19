@@ -1,7 +1,7 @@
 body{
     font-family: merlo, georgia, serif !important;
-    margin: 0 ;
-    padding: 0 ;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 /* Header Styling */
@@ -208,8 +208,8 @@ body{
     .container-div{
         flex-direction: column;
         padding:1.5rem 0 !important;
-        justify-content: center;
-        align-items: center;
+        justify-content: center !important;
+        align-items: center !important;
         overflow: hidden !important;
     }
     .upper-div {
@@ -224,7 +224,7 @@ body{
 
     .image-div {
         height: 100%;
-        min-width: 100%;
+        min-width: 98.5%;
         box-sizing: border-box;
     }
 
@@ -243,6 +243,8 @@ body{
     }
     .image-div{
         width: 49%;
+        padding: 1px;
+        padding-bottom: 10px;
     }
 }
 
