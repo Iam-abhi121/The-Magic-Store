@@ -68,17 +68,17 @@
                 <label for="product-description">Description</label>
                 <textarea id="product-description" name="product_description" rows="4" placeholder="Enter product description"></textarea>
                 
-                <label for="image">Product Image 1</label>
-                <input type="file" name="product_image" accept="image/*" required>
+                <label for="image">Product Images</label>
+                <input type="file" id="product_images" name="product_images[]" accept="image/*" multiple required>
 
-                <label for="image">Product Image 2</label>
+                <!-- <label for="image">Product Image 2</label>
                 <input type="file" name="product_image2" accept="image/*" required>
 
                 <label for="image">Product Image 3</label>
                 <input type="file" name="product_image3" accept="image/*" required>
 
                 <label for="image">Product Image 4</label>
-                <input type="file" name="product_image4" accept="image/*" required>
+                <input type="file" name="product_image4" accept="image/*" required> -->
 
                 
                 <button type="submit" class="btn">Save Product</button>

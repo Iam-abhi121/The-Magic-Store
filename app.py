@@ -196,12 +196,13 @@ def manageproduct():
         productcategory = request.form["product_category"]
         productsubcategory = request.form["product_subcategory"]
         
-        productimage = request.files["product_image"]
-        productimage2 = request.files["product_image2"]
-        productimage3 = request.files["product_image3"]
-        productimage4 = request.files["product_image4"]
+        # productimage = request.files["product_image"]
+        # productimage2 = request.files["product_image2"]
+        # productimage3 = request.files["product_image3"]
+        # productimage4 = request.files["product_image4"]
 
-        imgs =[productimage, productimage2, productimage3, productimage4]
+        # imgs =[productimage, productimage2, productimage3, productimage4]
+        imgs = request.files.getlist("product_images[]")
         purllist = []
 
         for pimg in imgs:
